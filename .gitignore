@@ -1,0 +1,49 @@
+*.py[cod]
+
+# C extensions
+*.so
+
+# Packages
+.installed.cfg
+*.egg
+*.egg-info
+develop-eggs
+eggs
+bin
+build
+dist
+include
+lib
+lib64
+parts
+sdist
+var
+wheelhouse
+
+# Installer logs
+pip-log.txt
+
+# Unit test / coverage reports
+.coverage
+.tox
+nosetests.xml
+reports/*
+
+# Translations
+*.mo
+
+# Emacs clutter
+TAGS
+TAGS~
+*~
+\#*# 
+.#*
+www/uploads
+
+#Mac Clutter
+.DS_Store
+
+#Pycharm
+.idea
+
+xapian_index
