@@ -14,6 +14,8 @@ import os
 
 import environ
 
+from . import VERSION as APPLICATION_VERSION
+
 env = environ.Env(DEBUG=(bool, False))
 
 environ.Env.read_env()
