@@ -47,3 +47,6 @@ www/uploads
 .idea
 
 xapian_index
+
+#django-environ
+.env
