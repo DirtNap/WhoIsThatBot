@@ -19,6 +19,9 @@ class Reddit(models.Model):
     allow_multiple_replies_in_post = models.BooleanField(default=False)
     max_post_age_days = models.PositiveIntegerField(null=False, default=7)
 
+    def __str__(self):
+        return f'{self.reddit_name} ({RedditStatus(self.status).label})'
+
     class Meta:
         constraints = [
             models.UniqueConstraint(fields=('reddit_name', ),
