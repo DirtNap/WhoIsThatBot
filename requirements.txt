@@ -27,3 +27,5 @@ urllib3==1.25.9
 wasabi==0.6.0
 websocket-client==0.57.0
 django-environ==0.4.5
+dateutils==0.6.8
+python-dateutil==2.8.1
