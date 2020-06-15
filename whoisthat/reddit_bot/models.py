@@ -1,5 +1,6 @@
 from django.db import models
 from django.utils.translation import gettext_lazy
+from django_extensions.db.models import TimeStampedModel
 
 from whoisthat.utils import max_length_from_choices
 
@@ -9,7 +10,7 @@ class RedditStatus(models.TextChoices):
     INACTIVE = 'I', gettext_lazy('Inactive')
     SUSPENDED = 'S', gettext_lazy('Suspended')
 
-class Reddit(models.Model):
+class Reddit(TimeStampedModel):
 
     reddit_name = models.CharField(null=False, blank=False, max_length=21)
     status = models.CharField(null=False, blank=False, default=RedditStatus.ACTIVE,
