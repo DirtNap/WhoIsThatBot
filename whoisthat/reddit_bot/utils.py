@@ -1,4 +1,6 @@
 """Utility features for the reddit bot."""
+from typing import Callable, List, Optional, Tuple
+
 import praw
 import spacy
 
@@ -16,8 +18,9 @@ class ArgumentError(Error, ValueError):
 
 NLP_PARSER = spacy.load(settings.SPACY_MODEL_BASE)
 
-def get_reddit_client(client_id=None, client_secret=None, user_agent=None,
-                      client_username=None, client_password=None):
+def get_reddit_client(client_id:Optional[str]=None, client_secret:Optional[str]=None,
+                      user_agent:Optional[str]=None,
+                      client_username:Optional[str]=None, client_password:Optional[str]=None) -> praw.Reddit:
     """Get a reddit client based on provided or default configuration."""
     kwargs = {
         'client_id': client_id or settings.PRAW_CLIENT_ID,
@@ -36,7 +39,7 @@ def get_reddit_client(client_id=None, client_secret=None, user_agent=None,
     return praw.Reddit(**kwargs)
 
 
-def get_tokens(parser, text):
+def get_tokens(parser:Callable, text:str) -> Tuple[List[str], List[Tuple[str, str]]]:
     """Parses texts and returns lists of persons and other found entities."""
     parsed = parser(text)
     people = []
